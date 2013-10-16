@@ -1,12 +1,9 @@
 # About
-
-This repo is an X-Tag custom web-component stub that can be used as a starting point when building new elements.  It provides that basic tools and grunt tasks to get started.
+work in progress
 
 # Dev Setup
 
 ```
-Fork this repo, rename it, then clone it.
-
 $ npm install	// install bower tasks
 $ bower install	// install components
 $ grunt build   // build the dependencies
