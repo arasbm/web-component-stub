@@ -7,28 +7,64 @@
   <link rel="stylesheet" type="text/css" href="x-tag-components.css"/>
   <link rel="stylesheet" type="text/css" href="../src/main.css"/>
 
-  <script type="text/javascript" src="x-tag-components.js"></script> 
-  <script type="text/javascript" src="../src/main.js"></script>      
-
   <!--TODO move this to JS land. This is loaded here for now to test things -->
   <script type="text/javascript" src="../src/helper/qrcode.min.js"></script>
 
-  <style>
+  <script type="text/javascript" src="x-tag-components.js"></script> 
+  <script type="text/javascript" src="../src/main.js"></script>      
 
+  <style>
+  body {
+    background-color: #333333;
+    color: white;
+    text-align: center;
+  }
+  
+  input#text {
+    background-color: #FCFFCD;
+    border-radius: 0.2em;
+    height: 3rem;
+    margin: 1rem;
+    font-size: 1.6em;
+    padding: 0 1rem;
+    width: 500px;
+  }
+
+  div#wrapper {
+    text-align: center;
+  }
+
+  x-qr {
+    font-size: 2rem;
+    border-style: dotted;
+    border-width: 4px;
+    display: block;
+    width: 520px;
+    position: relative;
+    margin: auto;
+  }
+  
+  x-qr > div {
+    /* to style just the qrcode image */
+    margin: 10px;
+  }
   </style>
 </head>
 
 <body>
-  <h2>X-QR Demo</h2>
-  <input id="text" type="text" name="input" value="write the qr code/address here" />
-  <x-qr id="xqr" text="arasbm.com">Additional Notes</x-qr>
-
+  <div id="wrapper">
+    <h2>X-QR Demo</h2>
+    <input id="text" type="text" name="input" value="write an address/text here and press enter" />
+    <br />
+    <x-qr id="xqr" text="arasbm.com" width=500 height=500 color-light="#FCFFCD" color-dark="#65002D">text content</x-qr>
+  </div>
   <script>
     var text = document.getElementById("text");
     var xqr = document.getElementById("xqr");
     text.addEventListener('keypress', function(evt) {
       if (evt.keyCode == 13 || evt.keyCode == 9) {
-        xqr.innerHTML = this.value;
+        //xqr.innerHTML = this.value;
+        xqr.setAttribute('text', this.value);
       }
     });
   </script>
