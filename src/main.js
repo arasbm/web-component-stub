@@ -24,7 +24,7 @@
         });
       settings[name] = item.value;
     });
-  };
+  }
 
   xtag.register('x-qr', {
     lifecycle: {

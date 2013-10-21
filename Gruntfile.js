@@ -4,15 +4,15 @@ module.exports = function(grunt) {
   grunt.initConfig({
     connect: {
       demo: {
-        options:{
+        options: {
           port: 3001,
           base: '',
           keepalive: true
         }
       }
     },
-    jshint:{
-      all: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js']
+    jshint: {
+      all: ['Gruntfile.js', 'src/helper/qrcode.js', 'src/main.js']
     },
     'smush-components': {
       options: {
@@ -37,7 +37,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-tagrelease');
   grunt.loadNpmTasks('grunt-smush-components');
 
-  grunt.registerTask('build', ['jshint','smush-components']);
+  grunt.registerTask('build', ['jshint', 'smush-components']);
   grunt.registerTask('bump:patch', ['bumpup:patch', 'tagrelease']);
 
 };
