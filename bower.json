@@ -1,9 +1,10 @@
 {
   "name": "x-qr",
-  "description": "",
+  "description": "simple web component to create a QR code",
   "version": "0.1.0",
   "keywords": [
-    "web-components",    
+    "qrcode",
+    "web-components",
     "x-tag"
   ],
   "main": [
