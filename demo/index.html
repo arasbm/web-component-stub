@@ -53,17 +53,17 @@
 <body>
   <div id="wrapper">
     <h2>X-QR Demo</h2>
-    <input id="text" type="text" name="input" value="write an address/text here and press enter" />
+    <p>write an address or any text below and press enter to generate a qrcode from it</p>
+    <input id="text" type="text" name="input" value="arasbm.com" />
     <br />
-    <x-qr id="xqr" text="arasbm.com" width=500 height=500 color-light="#FCFFCD" color-dark="#65002D">text content</x-qr>
+    <x-qr id="xqr" width=500 height=500 color-light="#FFFFFF" color-dark="#65002D">arasbm.com</x-qr>
   </div>
   <script>
     var text = document.getElementById("text");
     var xqr = document.getElementById("xqr");
     text.addEventListener('keypress', function(evt) {
       if (evt.keyCode == 13 || evt.keyCode == 9) {
-        //xqr.innerHTML = this.value;
-        xqr.setAttribute('text', this.value);
+        xqr.innerHTML = this.value;
       }
     });
   </script>
